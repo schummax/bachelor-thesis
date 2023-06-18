@@ -1,0 +1,11 @@
+conda/
+03-data/
+04-analysis/
+06-reports/
+tmp/
+.snakemake/
+.nextflow/
+.nextflow.log
+.nextflow.log.[1-9]
+work/
+snakemake_tmp/
