@@ -1,4 +1,4 @@
-Sample_Name	Library_ID	Lane	Colour_Chemistry	Organism	SeqType	Strandedness	UDG_Treatment	R1	R2	BAM
+clwearSample_Name	Library_ID	Lane	Colour_Chemistry	Organism	SeqType	Strandedness	UDG_Treatment	R1	R2	BAM
 BGG_MOSDA	ERR6862849	0	4	Homo sapiens	PE	double	none	/mnt/archgen/users/schumacher/bachelorthesis/03-data/download_files/ERR6862849_1.fastq.gz	/mnt/archgen/users/schumacher/bachelorthesis/03-data/download_files/ERR6862849_2.fastq.gz	NA
 BGG_KOSDC	ERR6862847	0	4	Homo sapiens	PE	double	none	/mnt/archgen/users/schumacher/bachelorthesis/03-data/download_files/ERR6862847_1.fastq.gz	/mnt/archgen/users/schumacher/bachelorthesis/03-data/download_files/ERR6862847_2.fastq.gz	NA
 BGG_LOSDA	ERR6862848	0	4	Homo sapiens	PE	double	none	/mnt/archgen/users/schumacher/bachelorthesis/03-data/download_files/ERR6862848_1.fastq.gz	/mnt/archgen/users/schumacher/bachelorthesis/03-data/download_files/ERR6862848_2.fastq.gz	NA
