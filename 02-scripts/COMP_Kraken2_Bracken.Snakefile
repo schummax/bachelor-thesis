@@ -140,8 +140,11 @@ rule summarise_bracken:
         reports = pd.concat([pd.read_csv(fn, sep="\t") \
                              .assign(filename=os.path.basename(fn))
                              for fn in input])
-        reports['sample'] = reports['filename'].str.split(".").str[0]
-        reports['kmerlength'] = reports['filename'].str.extract(r'[ES]RS[0-9]+.bracken_([0-9]+)bp.txt').astype(int)
+        extracted = reports['filename'].str.extract(r'BGG_([A-Z]+).bracken_([0-9]+)bp.txt')
+        reports['sample'] = extracted[0]
+        reports['kmerlength'] = extracted[1].astype(int)
+        # reports['sample'] = reports['filename'].str.split(".").str[0]
+        # reports['kmerlength'] = reports['filename'].str.extract(r'BGG_([A-Z]+).bracken_([0-9]+)bp.txt').astype(int)
         reports[['sample', 'kmerlength', 'name', 'taxonomy_id', 'new_est_reads', 'fraction_total_reads']] \
             .rename({'name': 'taxon',
                      'new_est_reads': 'count',
