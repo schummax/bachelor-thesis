@@ -1,0 +1,86 @@
+\documentclass[12pt, a4paper]{scrreprt}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[left=3.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{csquotes}
+
+%===Font===========================================================================
+\usepackage{lmodern}
+\renewcommand*\familydefault{\sfdefault}
+
+%===Bibliography===================================================================
+\usepackage{biblatex}
+\addbibresource{references.bib}
+
+\title{Bachelor thesis}
+\author{Maximilian Schumacher}
+\date{June 2023}
+
+
+\begin{document}
+\begin{titlepage}
+    \begin{figure}
+        \hfill 
+        \includegraphics[width=0.45\textwidth]{Logo_EAH.jpg}
+        \label{fig:eah_logo}
+    \end{figure}
+    \begin{center}
+        \vspace*{2cm}
+        
+        \LARGE
+        \textbf{Identification of biosynthetic gene clusters in ice core samples collected from permafrost}
+            
+        \vspace{2cm}
+        \large
+        \textbf{Bachelorarbeit}
+
+        \vspace{2cm}
+        \normalsize
+        vorgelegt an der Ernst-Abbe-Hochschule Jena \\
+        Fachbereich Medizintechnik und Biotechnologie\\
+        \vspace{0.5cm}
+        Biotechnologie
+    \end{center}
+    \vfill
+    \begin{table}[b]
+        \begin{tabular}{l l}
+            Hochschulbetreuer/in: & Prof. Munder \\
+            Betriebliche/r Betreuer/in: & Alexander Hübner, Irina Velsko \\
+             &  \\
+            Firma/Institut: & Max-Planck-Institut für evolutionäre Anthropologie \\
+             &  \\
+             &  \\
+            Bearbeitet von: & Maximilian Leopold Schumacher \\
+            Matrikelnummer: &  647112\\
+            Biotechnologie &  \\
+        \end{tabular}
+    \end{table}
+\end{titlepage}
+\pagenumbering{Roman}
+
+\tableofcontents
+\setcounter{page}{2}
+\addcontentsline{toc}{chapter}{Table of contents}
+
+\listoffigures
+\addcontentsline{toc}{chapter}{List of figures}
+
+\listoftables
+\addcontentsline{toc}{chapter}{List of tables}
+
+\chapter{Introduction}
+\pagenumbering{arabic}
+\setcounter{page}{4}
+\chapter{Methods}
+\cite{blin_antismash_2021}
+\chapter{Results}
+\chapter{Discussion}
+
+\printbibliography
+\addcontentsline{toc}{chapter}{Bibliography}
+
+\end{document}
