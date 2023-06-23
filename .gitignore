@@ -9,3 +9,4 @@ tmp/
 .nextflow.log.[1-9]
 work/
 snakemake_tmp/
+.Rproj.user

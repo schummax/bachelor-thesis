@@ -1,0 +1,10 @@
+project_name	publication_year	publication_doi	site_name	latitude	longitude	geo_loc_name	study_primary_focus	sequence_name	depth	sample_name	sample_age	sample_age_doi	feature	material	sampling_date	archive	archive_project	archive_accession
+Rigou2022	2022	10.1093/femsml/uqac003	Stanchikovsky Yar	68.370	161.415	Russia	microbial	unknown	3000	P 1084T	35000	10.1093/femsml/uqac003	thermokarst	permafrost	2012	ENA	PRJEB47746	ERS7649017
+Rigou2022	2022	10.1093/femsml/uqac003	Yukechi Yedoma lake	61.761	130.475	Russia	microbial	YuL15	1600	Yuk15 YuL15/Y2	48500	10.1093/femsml/uqac003	thermokarst	permafrost	2015	ENA	PRJEB47746	ERS7649023
+Rigou2022	2022	10.1093/femsml/uqac003	Yukechi Yedoma	61.760	130.474	Russia	microbial	Yed1	1100	Yuk15 Yed1/Yed.7	36000	10.1093/femsml/uqac003	thermokarst	permafrost	2015	ENA	PRJEB47746	ERS7649026
+Rigou2022	2022	10.1093/femsml/uqac003	Yukechi Yedoma	61.760	130.474	Russia	microbial	Yed1	1600	Yuk15 Yed1/Yed.6	49000	10.1093/femsml/uqac003	thermokarst	permafrost	2015	ENA	PRJEB47746	ERS7649021
+Rigou2022	2022	10.1093/femsml/uqac003	Yukechi Alas	61.765	130.465	Russia	microbial	Alas1	1200	Yuk15 Alas1/Ala.11	28000	10.1093/femsml/uqac003	thermokarst	permafrost	2015	ENA	PRJEB47746	ERS7649022
+Rigou2022	2022	10.1093/femsml/uqac003	Yukechi Yedoma lake	61.761	130.475	Russia	microbial	YuL15	600	Yuk15 YuL15/Y4	100	10.1093/femsml/uqac003	thermokarst	permafrost	2015	ENA	PRJEB47746	ERS7649027
+Rigou2022	2022	10.1093/femsml/uqac003	Yukechi Alas	61.765	130.465	Russia	microbial	Alas1	1900	Yuk15 Alas1/Ala.9	42000	10.1093/femsml/uqac003	thermokarst	permafrost	2015	ENA	PRJEB47746	ERS7649028
+Rigou2022	2022	10.1093/femsml/uqac003	Yukechi Alas	61.765	130.465	Russia	microbial	Alas1	1600	Yuk15 Alas1/Ala.10	45000	10.1093/femsml/uqac003	thermokarst	permafrost	2015	ENA	PRJEB47746	ERS7649024
+Rigou2022	2022	10.1093/femsml/uqac003	Yukechi Yedoma lake	61.761	130.475	Russia	microbial	YuL15	1900	Yuk15 YuL15/Y1	40000	10.1093/femsml/uqac003	thermokarst	permafrost	2015	ENA	PRJEB47746	ERS7649025
