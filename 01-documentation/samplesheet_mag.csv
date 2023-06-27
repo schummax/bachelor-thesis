@@ -1,0 +1,10 @@
+sample,group,short_reads_1,short_reads_2,long_reads
+BGG_MOSDA,0,/mnt/archgen/users/schumacher/bachelorthesis/03-data/processed_data/BGG_MOSDA_1.fastq.gz,/mnt/archgen/users/schumacher/bachelorthesis/03-data/processed_data/BGG_MOSDA_2.fastq.gz,
+BGG_KOSDC,1,/mnt/archgen/users/schumacher/bachelorthesis/03-data/processed_data/BGG_KOSDC_1.fastq.gz,/mnt/archgen/users/schumacher/bachelorthesis/03-data/processed_data/BGG_KOSDC_2.fastq.gz,
+BGG_LOSDA,2,/mnt/archgen/users/schumacher/bachelorthesis/03-data/processed_data/BGG_LOSDA_1.fastq.gz,/mnt/archgen/users/schumacher/bachelorthesis/03-data/processed_data/BGG_LOSDA_2.fastq.gz,
+BGG_ROSDA,3,/mnt/archgen/users/schumacher/bachelorthesis/03-data/processed_data/BGG_ROSDA_1.fastq.gz,/mnt/archgen/users/schumacher/bachelorthesis/03-data/processed_data/BGG_ROSDA_2.fastq.gz,
+BGG_OOSDC,4,/mnt/archgen/users/schumacher/bachelorthesis/03-data/processed_data/BGG_OOSDC_1.fastq.gz,/mnt/archgen/users/schumacher/bachelorthesis/03-data/processed_data/BGG_OOSDC_2.fastq.gz,
+BGG_POSDC,5,/mnt/archgen/users/schumacher/bachelorthesis/03-data/processed_data/BGG_POSDC_1.fastq.gz,/mnt/archgen/users/schumacher/bachelorthesis/03-data/processed_data/BGG_POSDC_2.fastq.gz,
+BGG_BOSW,6,/mnt/archgen/users/schumacher/bachelorthesis/03-data/processed_data/BGG_BOSW_1.fastq.gz,/mnt/archgen/users/schumacher/bachelorthesis/03-data/processed_data/BGG_BOSW_2.fastq.gz,
+BGG_NOSDA,7,/mnt/archgen/users/schumacher/bachelorthesis/03-data/processed_data/BGG_NOSDA_1.fastq.gz,/mnt/archgen/users/schumacher/bachelorthesis/03-data/processed_data/BGG_NOSDA_2.fastq.gz,
+BGG_QOSDA,8,/mnt/archgen/users/schumacher/bachelorthesis/03-data/processed_data/BGG_QOSDA_1.fastq.gz,/mnt/archgen/users/schumacher/bachelorthesis/03-data/processed_data/BGG_QOSDA_2.fastq.gz,
