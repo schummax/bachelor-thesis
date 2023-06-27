@@ -10,3 +10,16 @@ tmp/
 work/
 snakemake_tmp/
 .Rproj.user
+
+# 07-publication
+07-publication/*.aux
+07-publication/*.bbl
+07-publication/*.bcf
+07-publication/*.fdb_latexmk
+07-publication/*.fls
+07-publication/*.lof
+07-publication/*.log
+07-publication/*.lot
+07-publication/*.run.xml
+07-publication/*.synctex.gz
+07-publication/*.toc
