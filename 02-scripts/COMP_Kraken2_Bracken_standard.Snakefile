@@ -105,50 +105,50 @@ rule reformat_taxpasta:
 
 #### Bracken ###################################################################
 
-rule bracken:
-    input:
-        "04-analysis/kraken2/{sample}.report.txt"
-    output:
-        txt = "04-analysis/bracken/{sample}.bracken_{l}bp.txt"
-    message: "Infer relative abundances with Bracken: {wildcards.sample} assuming read length {wildcards.l} bp"
-    conda: "ENVS_Kraken2_Bracken.yaml"
-    resources:
-        mem = 2,
-        cores = 1
-    params:
-        db = "03-data/refdbs/kraken2_standard_20221209"
-    threads: 1
-    shell:
-        """
-        bracken -d {params.db} \
-                -i {input} \
-                -o {output.txt} \
-                -r {wildcards.l} \
-                -l S
-        """
+# rule bracken:
+#     input:
+#         "04-analysis/kraken2/{sample}.report.txt"
+#     output:
+#         txt = "04-analysis/bracken/{sample}.bracken_{l}bp.txt"
+#     message: "Infer relative abundances with Bracken: {wildcards.sample} assuming read length {wildcards.l} bp"
+#     conda: "ENVS_Kraken2_Bracken.yaml"
+#     resources:
+#         mem = 2,
+#         cores = 1
+#     params:
+#         db = "03-data/refdbs/kraken2_standard_20221209"
+#     threads: 1
+#     shell:
+#         """
+#         bracken -d {params.db} \
+#                 -i {input} \
+#                 -o {output.txt} \
+#                 -r {wildcards.l} \
+#                 -l S
+#         """
 
-rule summarise_bracken:
-    input:
-        expand("04-analysis/bracken/{sample}.bracken_{l}bp.txt", sample=SAMPLES, l=KMERLENS)
-    output:
-        "05-results/COMP_Bracken_Kraken2_standardDB.tsv.gz"
-    message: "Summarise the taxonomic profiles produced by Bracken"
-    resources:
-        mem = 8,
-        cores = 1
-    run:
-        reports = pd.concat([pd.read_csv(fn, sep="\t") \
-                             .assign(filename=os.path.basename(fn))
-                             for fn in input])
-        extracted = reports['filename'].str.extract(r'BGG_([A-Z]+).bracken_([0-9]+)bp.txt')
-        reports['sample'] = extracted[0]
-        reports['kmerlength'] = extracted[1].astype(int)
-        # reports['sample'] = reports['filename'].str.split(".").str[0]
-        # reports['kmerlength'] = reports['filename'].str.extract(r'BGG_([A-Z]+).bracken_([0-9]+)bp.txt').astype(int)
-        reports[['sample', 'kmerlength', 'name', 'taxonomy_id', 'new_est_reads', 'fraction_total_reads']] \
-            .rename({'name': 'taxon',
-                     'new_est_reads': 'count',
-                     'fraction_total_reads': 'relAb'}, axis=1) \
-            .to_csv(output[0], sep="\t", index=False, compression="gzip")
+# rule summarise_bracken:
+#     input:
+#         expand("04-analysis/bracken/{sample}.bracken_{l}bp.txt", sample=SAMPLES, l=KMERLENS)
+#     output:
+#         "05-results/COMP_Bracken_Kraken2_standardDB.tsv.gz"
+#     message: "Summarise the taxonomic profiles produced by Bracken"
+#     resources:
+#         mem = 8,
+#         cores = 1
+#     run:
+#         reports = pd.concat([pd.read_csv(fn, sep="\t") \
+#                              .assign(filename=os.path.basename(fn))
+#                              for fn in input])
+#         extracted = reports['filename'].str.extract(r'BGG_([A-Z]+).bracken_([0-9]+)bp.txt')
+#         reports['sample'] = extracted[0]
+#         reports['kmerlength'] = extracted[1].astype(int)
+#         # reports['sample'] = reports['filename'].str.split(".").str[0]
+#         # reports['kmerlength'] = reports['filename'].str.extract(r'BGG_([A-Z]+).bracken_([0-9]+)bp.txt').astype(int)
+#         reports[['sample', 'kmerlength', 'name', 'taxonomy_id', 'new_est_reads', 'fraction_total_reads']] \
+#             .rename({'name': 'taxon',
+#                      'new_est_reads': 'count',
+#                      'fraction_total_reads': 'relAb'}, axis=1) \
+#             .to_csv(output[0], sep="\t", index=False, compression="gzip")
 
 ################################################################################
