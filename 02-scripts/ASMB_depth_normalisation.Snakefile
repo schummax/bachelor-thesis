@@ -41,24 +41,28 @@ rule loglog:
     input:
         sample = ["03-data/processed_data/{sample}_1.fastq.gz", "03-data/processed_data/{sample}_2.fastq.gz"]
     output:
-        "tmp/bbnorm/{sample}.loglog"
+        touch("tmp/bbnorm/{sample}.loglog_done")
     message: "Estimate the cardinality of the k-mer space: {wildcards.sample}"
     resources:
-        mem = 4,
-        mem_gb = 2,
+        mem = 120,
+        mem_gb = 120,
         cores = 1
     threads: 1
+    log: "tmp/bbnorm/{sample}.loglog"
+    benchmark: "tmp/bbnorm/benchmark.loglog.{sample}.txt"
     wrapper:
         "v2.0.0/bio/bbtools/loglog"
 
 checkpoint determine_memory:
     input:
-        "tmp/bbnorm/{sample}.loglog"
+        "tmp/bbnorm/{sample}.loglog_done"
     output:
         "tmp/bbnorm/{sample}.memory_requirement"
     message: "Calculate the memory requirement for bbnorm: {wildcards.sample}"
+    params:
+        log = "tmp/bbnorm/{sample}.loglog"
     run:
-        with open(input[0], "rt") as infile:
+        with open(params.log, "rt") as infile:
             for line in infile:
                 if line.startswith("Cardinality"):
                     cardinality = int(re.search(r'Cardinality: +([0-9]+)',
