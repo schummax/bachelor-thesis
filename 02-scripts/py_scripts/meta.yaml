@@ -1,0 +1,4 @@
+name: "bbnorm"
+description: Normalise the sequencing depth using k-mers and enable error correction using BBNorm.
+authors:
+  - Alexander Hübner
