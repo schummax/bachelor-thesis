@@ -91,6 +91,6 @@ rule bbnorm:
     threads: 16
     log: "04-analysis/bbnorm/{sample}_bbnorm.log"
     wrapper:
-        "file:///home/alexander_huebner/github/snakemake-wrappers/bio/bbtools/bbnorm"
+        "file:///mnt/archgen/users/schumacher/bachelorthesis/02-scripts/py_scripts/wrapper.py"   # "file:///home/alexander_huebner/github/snakemake-wrappers/bio/bbtools/bbnorm"
 
 ################################################################################
