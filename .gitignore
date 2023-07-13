@@ -17,6 +17,9 @@ bash/*.txt
 #Python/
 Python/*.png
 
+#R/
+R/*.png
+
 # 07-publication
 07-publication/*.aux
 07-publication/*.bbl
