@@ -11,6 +11,12 @@ work/
 snakemake_tmp/
 .Rproj.user
 
+#bash/
+bash/*.txt
+
+#Python/
+Python/*.png
+
 # 07-publication
 07-publication/*.aux
 07-publication/*.bbl
