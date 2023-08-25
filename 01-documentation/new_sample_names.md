@@ -15,18 +15,18 @@ distance:
 3->1   133.14 m
 
 ## Group 0
-BGG_BOSW --> `0_NA_B`
+(ERR6857195) BGG_BOSW --> `0_NA_B`
 
 ## Group 1
-BGG_POSDC --> `1_11_P`\
-BGG_KOSDC --> `1_16_K`
+(ERR6862852) BGG_POSDC --> `1_11_P`\
+(ERR6862847) BGG_KOSDC --> `1_16_K`
 
 ## Group 2
-BGG_LOSDA --> `2_12_L`\
-BGG_NOSDA --> `2_16_N`\
-BGG_ROSDA --> `2_19_R`
+(ERR6862848) BGG_LOSDA --> `2_12_L`\
+(ERR6862850) BGG_NOSDA --> `2_16_N`\
+(ERR6862854) BGG_ROSDA --> `2_19_R`
 
 ## Group 3
-BGG_QOSDA --> `3_06_Q`\
-BGG_MOSDA --> `3_16_M`\
-BGG_OOSDC --> `3_19_O`
+(ERR6862853) BGG_QOSDA --> `3_06_Q`\
+(ERR6862849) BGG_MOSDA --> `3_16_M`\
+(ERR6862851) BGG_OOSDC --> `3_19_O`
