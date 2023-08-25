@@ -60,7 +60,7 @@ rule kraken2_pairedend:
     conda: "ENVS_Kraken2_Bracken.yaml"
     resources:
         mem = 800,
-        cores = 1p6,
+        cores = 16,
     params:
         fastq = lambda wildcards: " ".join([f"03-data/processed_data/{wildcards.sample}_{i}.fastq.gz" for i in [1, 2]]),
         db = "/home/maxime_borry/SDAG_old/02_db/kraken2/ar_bac_plas_vir_hum_fun_plant_uni_vert",
