@@ -21,7 +21,7 @@ os.environ["OMP_NUM_THREADS"] = '1'
 #### SAMPLES ###################################################################
 ANTISMASH_DIR = "/mnt/archgen/users/schumacher/bachelorthesis/04-analysis/antismash"
 ASSEMBLY_DIR = "/mnt/archgen/users/schumacher/bachelorthesis/04-analysis/snakemake_assembly"
-SAMPLES = [os.path.basename(fn) for fn in glob(f"{ANTISMASH_DIR}/*") if os.path.basename(fn) not in ["BGG_NOSDA", "BGG_OOSDC", "assembly"]]
+SAMPLES = [os.path.basename(fn) for fn in glob(f"{ANTISMASH_DIR}/*") if os.path.basename(fn) not in ["assembly"]]
 ################################################################################
 
 rule all:
