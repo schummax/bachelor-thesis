@@ -35,3 +35,21 @@ R/*.png
 07-publication/*.run.xml
 07-publication/*.synctex.gz
 07-publication/*.toc
+
+#random unnecessary files
+Python/output/latex_assembly_stats.txt
+Python/scripts/assembly_stats_to_table.py
+Python/scripts/complete_BGCs.py
+Python/output/MAG_top_20_classes.png
+Python/output/MAG_top_20_genera.png
+Python/output/MMseqs_locations_with_orders.png
+Python/output/MMseqs_orders_grouped_by_location.png
+Python/output/MMseqs_top_10_orders.png
+Python/output/pydamage_boxplot_no_outliers.png
+.cache/matplotlib/fontlist-v330.json
+Python/output/comp_BGC_taxo.tsv
+Python/scripts/test_antismash.ipynb
+Python/output/latex_bin_quality.txt
+Python/scripts/antismash_json.ipynb
+Python/output/Loc_NCBIrank.txt
+Python/scripts/BGC_contigs_taxa.ipynb
