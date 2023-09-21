@@ -65,6 +65,7 @@ g = sns.catplot(
     aspect=1.2, 
     dodge=True,
     color='lightgrey',
+    showfliers=True, # True = show outliers of the boxplot
 )
 
 g.map(sns.stripplot, 'pos', 'freq', jitter=True, color='grey', dodge=True, alpha=0.5)
