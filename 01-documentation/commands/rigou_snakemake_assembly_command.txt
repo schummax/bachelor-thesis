@@ -1,0 +1,4 @@
+# the config.file got specified in the Snakefile (/mnt/archgen/users/schumacher/bachelorthesis/01-documentation/ancient_metagenome_assembly/config.yaml)
+# rerun-triggers mtime is used, because the file created by the nf-core/mag pipeline need to be touched to get recognized
+ 
+snakemake -use-conda --conda-prefix /mnt/archgen/users/huebner/ancient_metagenome_assembly/conda --profile sge_archgenq --cores 20 --jobs 9 -p --latency-wait 60 --rerun-triggers mtime -n
