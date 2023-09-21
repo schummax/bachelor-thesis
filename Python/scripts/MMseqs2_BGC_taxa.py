@@ -32,12 +32,9 @@ filtered_MMseqs = MMseqs[MMseqs['contig'].isin(flt_res['reference'])]
 filtered_MMseqs = filtered_MMseqs.reset_index(drop=True)
 
 # Extracting the taxonomic level from the lineage column
-filtered_MMseqs["genus"] = filtered_MMseqs["lineage"].apply(lambda x: re.search(r"g_([^;]+)", x).group(1) if re.search(r"g_([^;]+)", x) else np.nan)
-filtered_MMseqs["class"] = filtered_MMseqs["lineage"].apply(lambda x: re.search(r"c_([^;]+)", x).group(1) if re.search(r"c_([^;]+)", x) else np.nan)
 filtered_MMseqs["order"] = filtered_MMseqs["lineage"].apply(lambda x: re.search(r"o_([^;]+)", x).group(1) if re.search(r"o_([^;]+)", x) else np.nan)
 
-filtered_MMseqs["genus"] = filtered_MMseqs["genus"].replace(np.nan, "unclassified")
-filtered_MMseqs["class"] = filtered_MMseqs["class"].replace(np.nan, "unclassified")
+
 filtered_MMseqs["order"] = filtered_MMseqs["order"].replace(np.nan, "unclassified")
 
 # Mapping dictionary
@@ -66,8 +63,6 @@ for sample in filtered_MMseqs["sample"].unique():
     print(f"{sample}: {n[sample]}")
 
 # Count the occurrence of each level and select the top 10
-top_10_genera = filtered_MMseqs["genus"].value_counts().head(10)
-top_10_classes = filtered_MMseqs["class"].value_counts().head(10)
 top_10_orders = filtered_MMseqs["order"].value_counts().head(10)
 
 # Plot the top 10 orders
