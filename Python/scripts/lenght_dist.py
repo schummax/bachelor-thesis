@@ -40,15 +40,12 @@ leg.get_frame().set_facecolor('white')
 plt.xlim(30, 300)
 plt.tight_layout()
 
-# Set the face color of the plot
 ax.set_facecolor('white')
 
-# Set the color of the axes to black
 for spine in ax.spines.values():
     spine.set_edgecolor('black')
 
-# Ensure the background is white when saving
-plt.savefig('length_dist.jpg', dpi=600)  # facecolor='white'
+plt.savefig('length_dist.jpg', dpi=600) 
 
 dnamollen_mean = {}
 sample_count = {}
