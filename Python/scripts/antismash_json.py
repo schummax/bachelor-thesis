@@ -1,11 +1,13 @@
 import json
 import pandas as pd
 import os
+import time
 
 data_list = []  # A list to hold the data dictionaries
 
 for dir in os.listdir('/mnt/archgen/users/schumacher/bachelorthesis/04-analysis/antismash/'):
     if dir.startswith("BGG_"):
+        start_time = time.time()
         print(dir)
         tsv_file = pd.read_csv(f'/mnt/archgen/users/schumacher/bachelorthesis/04-analysis/antismash/{dir}/{dir}.tsv', sep='\t')
         with open(f'/mnt/archgen/users/schumacher/bachelorthesis/04-analysis/antismash/{dir}/{dir}.json', 'r') as f:
@@ -36,19 +38,25 @@ for dir in os.listdir('/mnt/archgen/users/schumacher/bachelorthesis/04-analysis/
                                         "Organism": organism
                                     }
                                     data_list.append(data_dict)
-                                    print(data_dict)
                             except KeyError as e:
-                                print(e)
+                                print("Error -> ", e)
                                 pass
+        end_time = time.time()
+        print(f"This file took {round(end_time - start_time, 2)} seconds to process")
+        print(f"Found {len(data_list)} MIBiG hits so far")
 
 # Convert the list of dictionaries to a DataFrame
 df = pd.DataFrame(data_list)
 
 # To save the DataFrame to a CSV file (optional)
-df.to_csv('../output/comBGCs_knownclusterblast.tsv', sep="\t", index=False)
+df.to_csv('../output/comBGCs_clusterblast.tsv', sep="\t", index=False)
 
-# To display the first few rows of the DataFrame (optional)
+# To display the first few rows of the DataFrame
 print(df.head())
+
+# calculate the average identity across all samples
+avg_identity = df['Identity'].mean()
+print(f"Average identity: {avg_identity}")
 
 # node_count = 0
 # for dir in os.listdir('/mnt/archgen/users/schumacher/bachelorthesis/04-analysis/antismash/'):

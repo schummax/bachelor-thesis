@@ -66,5 +66,9 @@ plt.xlabel("Number of MAGs", fontsize=14)
 plt.ylabel("Order (based on GTDB)", fontsize=14)
 plt.xticks(fontsize=12)
 plt.yticks(fontsize=12, fontstyle='italic')
+plt.bar_label(plt.gca().containers[0], 
+                     labels=[f"{x:,}" for x in top_20_orders.values],
+                     label_type='edge', 
+                     fontsize=10)
 
 plt.savefig("../output/MAG_top_20_orders.png", dpi=300, bbox_inches="tight")

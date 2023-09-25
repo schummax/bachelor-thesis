@@ -13,13 +13,15 @@ sns.set_style("ticks")
 path_to_pydamage = "../../05-results/QUAL_pyDamage_results_BGCcontigs.tsv"
 pydamage = pd.read_csv(path_to_pydamage, sep="\t")
 
-# Filtering the data
-flt_res = pydamage[
-    (pydamage['predicted_accuracy'] >= 0.5) & (pydamage['qvalue'] < 0.05)
-][['sample', 'reference', 'nb_reads_aligned'] + [f'CtoT-{i}' for i in range(11)]]
+# # Filtering the data
+# flt_res = pydamage[
+#     (pydamage['predicted_accuracy'] >= 0.5) & (pydamage['qvalue'] < 0.05)
+# ][['sample', 'reference', 'nb_reads_aligned'] + [f'CtoT-{i}' for i in range(11)]]
 
-# Filtering rows where nb_reads_aligned is at least 500
-flt_res = flt_res[flt_res['nb_reads_aligned'] >= 500]
+# # Filtering rows where nb_reads_aligned is at least 500
+# flt_res = flt_res[flt_res['nb_reads_aligned'] >= 500]
+
+flt_res = pydamage
 
 # Loading the MMseqs2 data
 path_to_MMseqs = "/mnt/archgen/users/schumacher/bachelorthesis/05-results/ANNO_BGC_contig_taxclassification.tsv"
@@ -28,12 +30,18 @@ MMseqs = pd.read_csv(path_to_MMseqs, sep="\t")
 # Filtering the data with cotigs that passed pyDamage filtering
 filtered_MMseqs = MMseqs[MMseqs['contig'].isin(flt_res['reference'])]
 
+x = 0
+for contig_val in MMseqs['contig']:
+    if contig_val not in flt_res['reference'].values:
+        x += 1
+print(x)
+
 # reset the index
 filtered_MMseqs = filtered_MMseqs.reset_index(drop=True)
 
 # Extracting the taxonomic level from the lineage column
-filtered_MMseqs["order"] = filtered_MMseqs["lineage"].apply(lambda x: re.search(r"o_([^;]+)", x).group(1) if re.search(r"o_([^;]+)", x) else np.nan)
-
+#filtered_MMseqs["order"] = filtered_MMseqs["lineage"].apply(lambda x: re.search(r"o_([^;]+)", x).group(1) if re.search(r"o_([^;]+)", x) else np.nan)
+filtered_MMseqs["order"] = filtered_MMseqs["lineage"].apply(lambda x: re.search(r"o_([^;]+)", str(x)).group(1) if re.search(r"o_([^;]+)", str(x)) else np.nan)
 
 filtered_MMseqs["order"] = filtered_MMseqs["order"].replace(np.nan, "unclassified")
 
@@ -129,4 +137,4 @@ for i, (sample, orders) in enumerate(grouped_orders.items()):
         ax.set_ylim(-1, max_bars)
         ax.set_xlim(0, 100)
 
-plt.savefig("../output/MMseqs_top_8_orders_by_sample.png", dpi=300, bbox_inches="tight")
+plt.savefig("../output/MMseqs_top_8_orders_by_sample_unfiltered.png", dpi=300, bbox_inches="tight")
