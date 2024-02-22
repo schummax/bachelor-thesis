@@ -69,8 +69,6 @@ taxonomix_results = pd.read_csv("/mnt/archgen/users/schumacher/bachelorthesis/05
 
 # table.to_csv("/mnt/archgen/users/schumacher/bachelorthesis/Python/output/comp_BGC_taxo.tsv", sep="\t", index=False)
 
-# Assuming table and taxonomix_results are already initialized
-
 knownclusterblast_results = pd.read_csv("/mnt/archgen/users/schumacher/bachelorthesis/Python/output/comBGCs_knownclusterblast.tsv", sep="\t")
 
 def knownclusterblast(id):
@@ -86,7 +84,7 @@ def knownclusterblast(id):
         print(f"ID {id} not found in knownclusterblast_results")
         return 0
 
-rows_list = []  # Use a list to collect rows and append them to the dataframe at once
+rows_list = []  
 
 for key, df in dfs.items():
     key = key.replace(".tsv", "")

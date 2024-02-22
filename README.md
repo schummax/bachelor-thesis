@@ -1,9 +1,5 @@
 # Bachelor thesis
 
-## Introduction
-
-This is my bachelor thesis project.
-
-## Authors
+## Author
 
 Maximilian Schumacher
