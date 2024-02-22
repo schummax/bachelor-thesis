@@ -1,0 +1,7 @@
+Error in rule average_depth --> increased mem from 'lambda wildcards, attempt: 8 + attempt * 4,' to 'mem = lambda wildcards, attempt: 25 + attempt * 4,'
+(/mnt/archgen/users/schumacher/assembly_pipeline/ancient_metagenome_assembly/workflow/rules/rename_sort_contigs.smk)
+
+Error in rule determine_chunks_freebayes --> increased mem from 'lambda wildcards, attempt: 16 + attempt * 16,' to 'mem = lambda wildcards, attempt: 32 + attempt * 16,'
+(/mnt/archgen/users/schumacher/assembly_pipeline/ancient_metagenome_assembly/workflow/rules/consensus_correction.smk)
+
+Error in group freebayes:
