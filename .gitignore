@@ -48,3 +48,6 @@ Python/output/latex_bin_quality.txt
 Python/scripts/antismash_json.ipynb
 Python/output/Loc_NCBIrank.txt
 Python/scripts/BGC_contigs_taxa.ipynb
+
+#assembly_pipeline
+**/assembly_pipeline/
